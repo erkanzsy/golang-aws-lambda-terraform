@@ -1,5 +1,5 @@
 build:
-	cd app && GOOS=linux GOARCH=amd64 go build -v -ldflags '-d -s -w' -a -tags netgo -installsuffix netgo -o ../build/bin/app .
+	cd app && GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o ../build/bin/app -ldflags '-w' main.go
 
 init:
 	cd terraform && terraform init
