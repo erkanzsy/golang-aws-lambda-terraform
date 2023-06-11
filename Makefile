@@ -5,7 +5,7 @@ init:
 	cd terraform && terraform init
 
 plan:
-	cd terraform && terraform apply --auto-approve
+	cd terraform && terraform plan --auto-approve
 
 apply:
 	cd terraform && terraform apply --auto-approve
