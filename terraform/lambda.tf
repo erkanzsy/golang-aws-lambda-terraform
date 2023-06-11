@@ -7,7 +7,6 @@ resource "aws_lambda_function" "lambda_func" {
   role             = aws_iam_role.lambda_exec.arn
 }
 
-# Assume role setup
 resource "aws_iam_role" "lambda_exec" {
   name_prefix = local.app_id
 
@@ -29,7 +28,6 @@ EOF
 
 }
 
-# Attach role to Managed Policy
 variable "iam_policy_arn" {
   description = "IAM Policy to be attached to role"
   type        = list(string)
